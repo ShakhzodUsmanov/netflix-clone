@@ -19,12 +19,12 @@ const Navbar = () => {
       } else {
         setShowBackground(false);
       }
+    };
 
-      window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -39,17 +39,9 @@ const Navbar = () => {
   return (
     <nav className="w-full fixed z-40">
       <div
-        className={`
-          px-4 
-          md:px-16 
-          py-6 
-          flex 
-          flex-row 
-          items-center 
-          transition 
-          duration-500 
-          ${showBackground ? "bg-zinc-900" : ""}
-          `}
+        className={`px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 ${
+          showBackground ? "bg-zinc-900 bg-opacity-90" : ""
+        }`}
       >
         <img className="h-4 lg:h-7" src="/images/logo.png" alt="logo" />
         <div
